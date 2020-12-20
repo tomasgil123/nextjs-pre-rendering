@@ -68,7 +68,7 @@ const Home: FC = () => {
         <div>
           <div>Sections pre-filtered with asPath</div>
           {sectionsFiltered.map((section) => (
-            <div key={section.name}>
+            <div key={`${section.name}-1`}>
               <ListElement name={section.name} img={section.img} />
             </div>
           ))}
@@ -76,17 +76,15 @@ const Home: FC = () => {
         <div>
           <div>Sections NOT pre-filtered with asPath</div>
           {sections.map((section) => (
-            <>
-              <div key={section.name}>
-                <>{section.show && <ListElement name={section.name} img={section.img} />}</>
-              </div>
-            </>
+            <div key={`${section.name}-2`}>
+              <>{section.show && <ListElement name={section.name} img={section.img} />}</>
+            </div>
           ))}
         </div>
         <div>
           <div>Sections pre-filtered with query param</div>
           {sectionsFilteredForQueryList.map((section) => (
-            <div key={section.name}>
+            <div key={`${section.name}-3`}>
               <ListElement name={section.name} img={section.img} />
             </div>
           ))}
